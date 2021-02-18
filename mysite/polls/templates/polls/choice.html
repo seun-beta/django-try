@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Your guess was {{option}}</p>
+    {% if option < 100 %}
+        <p>Your choice is less than 100</p>
+    {% elif option == 100 %}
+        <p>Your choice is equal to 100</p>
+    {% else %}
+        <p>Your choice is greater than 100</p>
+    {%endif%}
+</body>
+</html>

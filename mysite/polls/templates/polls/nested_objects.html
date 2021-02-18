@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>This is the nested objects page </p>
+    <p>{{ outer.inner }}</p>
+    <h3>
+        {% ls = outer.inner %}
+        <ul>
+        {% for i in ls %}
+            <li>{{i}}</li>
+    </h3>
+</ul>
+{% endfor %}
+</body>
+</html>
