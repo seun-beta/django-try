@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="GET">
         <label for="text1">Label 1: </label>
         <input type="text" id="text1" name="label1"><br>
         <br>
@@ -21,11 +21,29 @@
         <p><input type="radio" name="age" id="labelradio" value="18">18</p>
         <p><input type="radio" name="age" id="labelradio" value="Above 18">Above 18</p>
         <p><label for="">Label for Checkbox:</label></p>
-        <input type="checkbox" name="" id=""><br>
-        <input type="checkbox" name="" id=""><br>
-        <input type="checkbox" name="" id=""><br>
-        <input type="checkbox" name="" id=""><br>
+        <input type="checkbox" name="us" id="" value="domain us">.us<br>
+        <input type="checkbox" name="ng" id="" value="domain ng">.ng<br>
+        <input type="checkbox" name="ke" id="" value="domain ke">.ke<br>
+        <input type="checkbox" name="rw" id="" value="domain rw">.rw<br>
 
+        <p>This is for the dropdown/select form type</p>
+        <label for="">Drink Type:</label> <br>
+        <select name="soda" id="">
+            <option value="null">------Please Select---------</option>
+            <option value="coca cola">Coca Cola</option>
+            <option value="sprite">Sprite</option>
+            <option value="bigi cola">Bigi Cola</option>
+            <option value="fanta">Fanta</option>
+            <option value="mirinda" selected>Mirinda</option>
+            <option value="mineral water">Mineral Water</option>
+        </select><br>
+        <input type="submit" name="" id="" value="Save" name="sumbit button"> <br>
+        <label for="textarea">Text Area Example:</label><br>
+        <textarea name="textarea" id="textarea" cols="60" rows="34" name="textarea">Put your text here </textarea><br>
+        <input type="button" name="" id=""
+        onclick="location.href='http://google.com' ; return false;"
+        value="Escape"
+        >
     </form>
 </body>
 </html>
