@@ -15,7 +15,8 @@
         <input type="text" name="guess" id="guess">
         {% csrf_token %}
         <input type="submit" value="Submit">
-
     </form>
+    <h1>This is your csrf token:</h1>
+    {{ csrf_token }}
 </body>
 </html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>
         POST Request Example
@@ -13,9 +14,10 @@
     <form action="" method="POST">
         <label for="guess">   Input your guess   </label>
         <input type="text" name="guess" id="guess">
-        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="__token__">
         <input type="submit" value="Submit">
-
+        
     </form>
 </body>
+
 </html>

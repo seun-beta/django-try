@@ -17,65 +17,15 @@ def dumpdata(label, data):
     return retval
 
 def getform(request):
-    response = """
-        <body>
-        <p>
-            GET Request Example
-        </p>
-        <form action="" method="GET">
-            <label for="guess">   Input your guess   </label>
-            <input type="text" name="guess" id="guess">
-            <input type="submit" value="Submit">
-        </form>
-        </body>                      
-    """
-    response = response + dumpdata('GET', request.GET)
-    return HttpResponse(response)
+    return render(request, 'polls/getform.html')
 
 @csrf_exempt
 def postform(request):
-    response = """
-        <body>
-        <p>
-            POST Request Example
-        </p>
-        <form action="" method="POST">
-            <label for="guess">   Input your guess   </label>
-            <input type="text" name="guess" id="guess">
-            <input type="submit" value="Submit">
-        </form>
-        </body>             
-    """
-    response += dumpdata('POST', request.POST)
-    return HttpResponse(response)
+    return render(request, template_name='polls/postform.html')
 
 def get_try(request):
-    response = """
-        <body>
-        <p>
-            This is an example of a GET 
-        </p>
-        <form action="" method="GET">
-            <label for="guess">   Input your number:   </label></br>
-            <input type="text" name="guess" id="guess">
-            <input type="submit" value="Submit">
-        </form>
-        </body>             
-    """
-    return HttpResponse(response)
+    return render(request, 'polls/get_try.html')
 
-@csrf_exempt
+
 def post_try(request):
-    response = """
-        <body>
-        <p>
-            This is an example of a POST 
-        </p>
-        <form action="" method="POST">
-            <label for="guess">   Input your guess:   </label></br>
-            <input type="text" name="guess" id="guess">
-            <input type="submit" value="Submit">
-        </form>
-        </body>             
-    """
-    return HttpResponse(response)
+    return render(request, 'polls/post_try.html')

@@ -7,15 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <p>
-        POST Request Example
-    </p>
-    <form action="" method="POST">
+    <h3 style="color: rgb(195, 0, 255);">
+        GET Request Example
+    </h3>
+    <form action="" method="GET">
         <label for="guess">   Input your guess   </label>
         <input type="text" name="guess" id="guess">
-        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="__token__">
         <input type="submit" value="Submit">
-
-    </form>
+        {% csrf_token %}
+    </form> 
 </body>
 </html>
