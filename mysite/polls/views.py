@@ -19,7 +19,6 @@ def dumpdata(label, data):
 def getform(request):
     return render(request, 'polls/getform.html')
 
-@csrf_exempt
 def postform(request):
     return render(request, template_name='polls/postform.html')
 
@@ -29,3 +28,31 @@ def get_try(request):
 
 def post_try(request):
     return render(request, 'polls/post_try.html')
+
+def checkguess(guess):
+    try:
+        if int(guess) < 10 :
+            msg = 'Guess is too low'
+        elif int(guess) == 10 :
+            msg = 'You got it!'
+        else:
+            msg = 'Your guess is too high'
+    except:
+        msg = 'Your guess was invalid: ' + guess
+
+    return msg
+
+
+def guess_try(request, guess):
+    msg = checkguess(guess)
+    context = {'guess' : msg}
+    return render(request, 'polls/guess_try.html', context)
+
+class GuessView(View):
+    def get(self, request, guess):
+        return render(request, 'polls/guess.html')
+
+    def post(self, request, guess):
+        guess = request.POST.get('guess')
+        msg = checkguess(guess)
+        return render(request, 'polls/guess.html', {'message': msg})
