@@ -50,9 +50,19 @@ def guess_try(request, guess):
 
 class GuessView(View):
     def get(self, request, guess):
+        request.COOKIES
+        
         return render(request, 'polls/guess.html')
 
     def post(self, request, guess):
         guess = request.POST.get('guess')
         msg = checkguess(guess)
         return render(request, 'polls/guess.html', {'message': msg})
+
+
+def cookie(request):
+    request.COOKIES
+    resp = HttpResponse('')
+    resp.set_cookie('me','344')
+    resp.set_cookie('231', '246', max_age=2322)
+    return resp
